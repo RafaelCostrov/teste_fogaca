@@ -75,7 +75,7 @@ Adiciona um novo atendimento. Se o tipo_cliente for "equipe", o preço total ser
 ```json
 {
     "tipo_cliente": "visitante",   // string (opções: "equipe", "visitante", "voluntario")
-    "fogazzas": [                  // list[object]
+    "fogazzas": [                  // list object
         {
             "id_fogazza": 1,       // int
             "quantidade": 2        // int
@@ -91,7 +91,7 @@ Adiciona um novo atendimento. Se o tipo_cliente for "equipe", o preço total ser
     "tipo_cliente": "visitante",            // string
     "preco_total": 30.00,                   // float
     "comprado_em": "2026-02-19 14:30:00",   // string (formato: "YYYY-MM-DD HH:MM:SS")
-    "itens": [                              // list[object]
+    "itens": [                              // list object
         {
             "id_fogazza": 1,                // int
             "quantidade": 2,                // int
@@ -115,7 +115,7 @@ Lista todos os atendimentos.
         "tipo_cliente": "visitante",           // string
         "preco_total": 30.00,                  // float
         "comprado_em": "2026-02-19 14:30:00",  // string
-        "itens": [                             // list[object]
+        "itens": [                             // list object
             {
                 "id_fogazza": 1,               // int
                 "quantidade": 2                // int
@@ -155,7 +155,7 @@ Filtra atendimentos com paginação e ordenação. Todos os campos são opcionai
         "tipo_cliente": "visitante",           // string
         "preco_total": 30.00,                  // float
         "comprado_em": "2026-02-19 14:30:00",  // string
-        "itens": [                             // list[object]
+        "itens": [                             // list object
             {
                 "id_fogazza": 1,               // int
                 "quantidade": 2,               // int
@@ -177,7 +177,7 @@ Atualiza um atendimento. Apenas os campos enviados serão alterados. O preço to
 {
     "id_atendimento": 1,           // int (obrigatório)
     "tipo_cliente": "equipe",      // string (opcional, opções: "equipe", "visitante", "voluntario")
-    "fogazzas": [                  // list[object] (opcional)
+    "fogazzas": [                  // list object 
         {
             "id_fogazza": 1,       // int
             "quantidade": 3        // int
