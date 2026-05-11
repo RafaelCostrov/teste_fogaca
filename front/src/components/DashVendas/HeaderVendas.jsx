@@ -27,7 +27,7 @@ function HeaderVendas({ paginaAtual = 'vendas', onNavigate }) {
             className="text-2xl font-semibold text-yellow-igreja cursor-pointer" 
             onClick={handleNavigateToVendas}
           >
-            São Judas Tadeu
+            Santuário São Judas Tadeu
           </h1>
           <p className="text-sm text-white/90">
             {paginaAtual === 'vendas' ? 'Controle de Vendas' : 'Relatório de Vendas'}

@@ -15,7 +15,7 @@ export default function CardVendaHora({ dados = [], fogazzas = [], onClickPoint 
     const nome = nomeFogazza.trim().toLowerCase();
     if (nome.includes('queijo')) return 'Queijo';
     if (nome.includes('calabresa')) return 'Calabresa';
-    if (nome.includes('pizza')) return 'Pizza';
+    if (nome.includes('presunto')) return 'Presunto e Queijo';
     return nomeFogazza;
   };
 
@@ -76,9 +76,9 @@ export default function CardVendaHora({ dados = [], fogazzas = [], onClickPoint 
       border: '#056839',
       background: 'rgba(5, 104, 57, 0.08)'
     },
-    'Pizza': {
-      border: '#973E36',
-      background: 'rgba(151, 62, 54, 0.08)'
+    'Presunto e Queijo': {
+      border: '#B85C8A',
+      background: 'rgba(184, 92, 138, 0.08)'
     }
   };
 

@@ -15,7 +15,7 @@ function Header() {
           />
         </div>
         <div className="flex-1 text-center">
-          <h1 className="text-4xl font-semibold text-yellow-igreja">São Judas Tadeu</h1>
+          <h1 className="text-4xl font-semibold text-yellow-igreja">Santuário São Judas Tadeu</h1>
           <p className="text-xl text-white/90">Controle de Vendas</p>
         </div>
         <div className="w-32 flex justify-end gap-4">

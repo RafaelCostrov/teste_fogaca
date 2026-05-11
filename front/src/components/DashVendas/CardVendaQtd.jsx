@@ -66,7 +66,7 @@ export default function CardVendaQtd({ dados = [], fogazzas = [], onClickPoint }
       border: '#056839', 
       background: 'rgba(5, 104, 57, 0.08)'
     },
-    'Fogazza Pizza': {
+    'Fogazza Presunto e Queijo': {
       border: '#973E36',
       background: 'rgba(151, 62, 54, 0.08)'
     }

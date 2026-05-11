@@ -109,7 +109,7 @@ export default function MenuFiltro({
               {(fogazzas.length > 0 ? fogazzas : [
                 { id_fogazza: 'queijo', nome_fogazza: 'Queijo' },
                 { id_fogazza: 'calabresa', nome_fogazza: 'Calabresa' },
-                { id_fogazza: 'pizza', nome_fogazza: 'Pizza' }
+                { id_fogazza: 'presunto_queijo', nome_fogazza: 'Presunto e Queijo' }
               ]).map(f => (
                 <div
                   key={f.id_fogazza}
