@@ -191,17 +191,13 @@ class AtendimentoService():
             p.set(align='center', custom_size=True, width=2, height=2)
             p.text(f"Pedido: {atendimento.id_atendimento}\n")
             # p.text("-" * 16 + "\n")
-            p.set(custom_size=True, width=1, height=1, bold=False)
+            p.set(align='center', custom_size=True, width=1, height=1, bold=False)
             if atendimento.viagem:
-                if via:
-                    p.text(f"Viagem: SIM - Via: {via}/2\n\n")
-                else:
-                    p.text("Viagem: SIM\n\n")
-            else:
-                if via:
-                    p.text(f"Viagem: NAO - Via: {via}/2\n\n")
-                else:
-                    p.text("Viagem: NAO\n\n")
+                p.text("Viagem: SIM\n")
+            else:                
+                p.text("Viagem: NAO\n")
+            if via:
+                p.text(f"Via: {via}/2\n")
 
             p.set(align='left')
             for item in atendimento.itens:
@@ -222,6 +218,8 @@ class AtendimentoService():
             p.set(custom_size=True, width=1,
                   height=1, align='center', bold=True)
             p.text("Obrigado pela preferencia!")
+            p.text("\n")
+            p.text("Deus abencoe!")
             p.cut()
             p.close()
         except Exception as e:
