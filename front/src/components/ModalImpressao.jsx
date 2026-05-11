@@ -27,7 +27,7 @@ function ModalImpressao({ isOpen, onClose, atendimento, itensSelecionados = [], 
       setImprimindo(true)
       await atendimentoService.imprimir(atendimento.id_atendimento, 2)
       toast.success('Segunda via impressa com sucesso!')
-      setSegundaViaImpressa(true)
+      if (validarImpressao) setSegundaViaImpressa(true)
     } catch (error) {
       console.error('Erro ao imprimir segunda via:', error)
       toast.error('Erro ao imprimir segunda via. Verifique a impressora.')
@@ -104,7 +104,7 @@ function ModalImpressao({ isOpen, onClose, atendimento, itensSelecionados = [], 
           </button> */}
           <button
             onClick={imprimirSegundaVia}
-            disabled={imprimindo || segundaViaImpressa}
+            disabled={imprimindo || (segundaViaImpressa && validarImpressao)}
             className="flex-1 px-4 py-3 bg-green-igreja text-white rounded-xl font-medium hover:bg-green-700 transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
           >
             <HiPrinter size={18} />

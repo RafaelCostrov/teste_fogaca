@@ -22,7 +22,6 @@ export default function Relatorio() {
   const onCloseModal = () => setModal("");
 
   const handleExportarRelatorio = async (formato) => {
-    // Implementar lógica de exportação
     console.log(`Exportando relatório em formato ${formato}`);
     onCloseModal();
   };

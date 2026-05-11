@@ -40,6 +40,12 @@ export default function MenuFiltro({
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  const tipoClienteOpcoes = [
+    { value: "EQUIPE", label: "Equipe" },
+    { value: "VISITANTE", label: "Visitante" },
+    { value: "VOLUNTARIO", label: "Voluntário" },
+  ];
+
   return (
     <motion.div
       initial={{ height: 0, opacity: 0 }}
@@ -57,17 +63,15 @@ export default function MenuFiltro({
             tabIndex={0}
           >
             <span className={"truncate text-sm text-gray-700"}>
-              {tipoCliente.length > 0 ? tipoCliente.join(", ") : "Selecione..."}
+              {tipoCliente.length > 0
+                ? tipoCliente.map(v => tipoClienteOpcoes.find(o => o.value === v)?.label || v).join(", ")
+                : "Selecione..."}
             </span>
             <svg className={`w-4 h-4 ml-2 transition-transform ${openTipoCliente ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
           </div>
           {openTipoCliente && (
             <div className="absolute z-10 mt-1 w-full bg-white border border-gray-300 rounded shadow-lg max-h-40 overflow-auto">
-              {[
-                { value: "EQUIPE", label: "Equipe" },
-                { value: "VISITANTE", label: "Visitante" },
-                { value: "VOLUNTARIO", label: "Voluntário" },
-              ].map(opt => (
+              {tipoClienteOpcoes.map(opt => (
                 <div
                   key={opt.value}
                   className={`px-3 py-2 text-sm cursor-pointer hover:bg-gray-100 flex items-center ${tipoCliente.includes(opt.value) ? 'bg-blue-100 font-semibold' : ''}`}

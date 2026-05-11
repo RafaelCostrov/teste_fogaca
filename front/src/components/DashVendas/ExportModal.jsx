@@ -71,9 +71,14 @@ export default function ExportModal({ onExportar, filtrosAtivos = {}, saborFogaz
               </div>
             );
 
+            const tipoClienteLabels = { EQUIPE: 'Equipe', VISITANTE: 'Visitante', VOLUNTARIO: 'Voluntário' };
+
             const itens = [];
             if (tipoCliente && tipoCliente.length > 0) {
-              itens.push(<Badge key="tipo_cliente" label="Tipo de Cliente:" value={Array.isArray(tipoCliente) ? tipoCliente.join(', ') : tipoCliente} />);
+              const labels = Array.isArray(tipoCliente)
+                ? tipoCliente.map(v => tipoClienteLabels[v] || v).join(', ')
+                : (tipoClienteLabels[tipoCliente] || tipoCliente);
+              itens.push(<Badge key="tipo_cliente" label="Tipo de Cliente:" value={labels} />);
             }
             if (saborFogazza && saborFogazza.length > 0) {
               itens.push(<Badge key="sabores" label="Sabores:" value={saborFogazza.join(', ')} />);
