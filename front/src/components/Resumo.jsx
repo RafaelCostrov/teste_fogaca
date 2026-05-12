@@ -12,6 +12,7 @@ function Resumo({ itensSelecionados = [], onFinalizarAtendimento }) {
   const [modalAberto, setModalAberto] = useState(false)
   const [atendimentoFinalizado, setAtendimentoFinalizado] = useState(null)
   const [paraViagem, setParaViagem] = useState(false)
+  const [primeiraViaFalhou, setPrimeiraViaFalhou] = useState(false)
 
   const totalItens = itensSelecionados.reduce((acc, item) => acc + item.quantidade, 0)
   const valorTotal = itensSelecionados.reduce((acc, item) => acc + (item.quantidade * item.preco), 0)
@@ -55,6 +56,7 @@ function Resumo({ itensSelecionados = [], onFinalizarAtendimento }) {
       const response = await atendimentoService.adicionar(atendimentoData)
 
       setAtendimentoFinalizado(response)
+      setPrimeiraViaFalhou(false)
       setModalAberto(true)
 
       toast.info('Enviando para impressão...')
@@ -63,6 +65,7 @@ function Resumo({ itensSelecionados = [], onFinalizarAtendimento }) {
         toast.success('Recibo impresso!')
       } catch (printError) {
         console.error('Erro ao imprimir:', printError)
+        setPrimeiraViaFalhou(true)
         toast.warning('Atendimento salvo, mas houve erro na impressão. Verifique a impressora.')
       }
 
@@ -187,6 +190,7 @@ function Resumo({ itensSelecionados = [], onFinalizarAtendimento }) {
         atendimento={atendimentoFinalizado}
         itensSelecionados={itensSelecionados}
         paraViagem={paraViagem}
+        primeiraViaFalhou={primeiraViaFalhou}
       />
     </div>
   )

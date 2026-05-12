@@ -19,7 +19,13 @@ async function apiRequest(endpoint, options = {}) {
       throw new Error(`Erro HTTP: ${response.status}`)
     }
 
-    return await response.json()
+    const data = await response.json()
+
+    if (data && data.erro) {
+      throw new Error(data.erro)
+    }
+
+    return data
   } catch (error) {
     console.error('Erro na requisição:', error)
     throw error
@@ -71,7 +77,7 @@ export const atendimentoService = {
   async listarTodos() {
     return this.filtrar({
       pagina: 1,
-      limit: 1000, 
+      limit: 1000,
       order_by: "comprado_em",
       order_dir: "desc"
     })
