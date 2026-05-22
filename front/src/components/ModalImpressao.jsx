@@ -68,7 +68,7 @@ function ModalImpressao({ isOpen, onClose, atendimento, itensSelecionados = [], 
           <button
             onClick={() => {
               if (validarImpressao && !segundaViaImpressa) {
-                toast.warning('É necessário imprimir a segunda via!');
+                toast.warning('É necessário imprimir todas as vias!');
                 return;
               }
               onClose();

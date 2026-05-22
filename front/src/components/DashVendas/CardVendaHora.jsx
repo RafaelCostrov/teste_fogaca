@@ -15,7 +15,7 @@ export default function CardVendaHora({ dados = [], fogazzas = [], onClickPoint 
     const nome = nomeFogazza.trim().toLowerCase();
     if (nome.includes('queijo')) return 'Queijo';
     if (nome.includes('calabresa')) return 'Calabresa';
-    if (nome.includes('presunto')) return 'Presunto e Queijo';
+    if (nome.includes('pres')) return 'Presunto e Queijo';
     return nomeFogazza;
   };
 

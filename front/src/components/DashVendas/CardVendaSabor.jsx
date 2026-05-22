@@ -15,7 +15,7 @@ export default function CardVendaSabor({ dados = [], fogazzas = [], onSaborClick
     const nome = nomeFogazza.trim().toLowerCase();
     if (nome.includes('queijo')) return 'Queijo';
     if (nome.includes('calabresa')) return 'Calabresa';
-    if (nome.includes('presunto')) return 'Presunto e Queijo';
+    if (nome.includes('pres')) return 'Presunto e Queijo';
     return nomeFogazza;
   };
 
@@ -23,7 +23,7 @@ export default function CardVendaSabor({ dados = [], fogazzas = [], onSaborClick
     const corPorSabor = {
       'Queijo': '#D1A24B',
       'Calabresa': '#056839',
-      'Presunto e Queijo': '#B85C8A',
+      'Pres': '#B85C8A',
     };
     return saboresPadronizados.map(sabor => corPorSabor[sabor] || '#888888').slice(0, quantidade);
   };
